@@ -4,7 +4,11 @@ from math import *
 #Ejercicio 1
 
 def raizDe2 () -> float:
-    x = sqrt(2)
-    round(x,4)
-    return x
-raizDe2()
+    return round(sqrt(2),4)
+
+print(raizDe2())
+
+def imprimir_hola() -> str:
+    return "Hola"
+
+print(imprimir_hola())
