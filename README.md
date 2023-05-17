@@ -1,11 +1,11 @@
 # IAP-1C-2023
 Practicas de la materia Introduccio a la Programacion del Departamento de Computacion de la FCEN.
 
-Practica 3 - Introduccion a Haskell
-Practica 4 - Recursion sobre numeros enteros (Haskell)
-Practica 5 - Recursion sobre Listas (Haskell)
-Practica 6 - Testing de Caja Negra (Haskell)
-Practica 7 - Ejercicios con Imperativo (Python) 
+-Practica 3 - Introduccion a Haskell
+-Practica 4 - Recursion sobre numeros enteros (Haskell)
+-Practica 5 - Recursion sobre Listas (Haskell)
+-Practica 6 - Testing de Caja Negra (Haskell)
+-Practica 7 - Ejercicios con Imperativo (Python) 
 
 Guia Practica 7 de la materia Introduccio a la Programacion del Departamento de Computacion de la FCEN.
 
