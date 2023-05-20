@@ -127,5 +127,16 @@ def esNombreLargo (nombre: str) -> bool:
 print(esNombreLargo("Martin")) #True
 print(esNombreLargo("Josefina")) #True
 print(esNombreLargo("Estanislao")) #False
-    
-        
+
+#3.4
+def esBisiesto (año: int) -> bool:
+    return (año%400==0) or ((año%4==0) and (año%100!=0))
+
+#año = int(input("Año?"))
+#print(esBisiesto(año))
+print(esBisiesto(2004))
+print(esBisiesto(2005))
+
+#Ejercicio 4
+
+#
