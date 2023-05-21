@@ -1,4 +1,4 @@
-# IAP-1C-2023
+# Introducción a la Programaciíon - 1C - 2023
 Prácticas de la materia Introduccio a la Programacion del Departamento de Computacion de la FCEN.
 
 
