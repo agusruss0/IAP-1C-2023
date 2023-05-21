@@ -140,3 +140,38 @@ print(esBisiesto(2005))
 #Ejercicio 4
 
 #
+
+def pesoPino(alt: float) -> int:
+    altura = int(alt*100)
+    peso1 = 0
+    peso2 = 0
+    for m in range(1,altura+1,1):
+        if m<=300:
+            peso1 = altura*3
+        elif m>300:
+            peso2 = altura*2
+    pesoTotal = peso1+peso2
+    return pesoTotal
+
+def esPesoUtil(kg: int) -> bool:
+    return (kg>=400) and (kg<=1000)
+
+def sirvePino(alt: int) -> bool:
+    return esPesoUtil(pesoPino(alt))
+
+#altura = float(input("Altura en m: "))
+#print(sirvePino(altura))
+print(sirvePino(2.5))
+
+#Ejercicio 5
+
+#5.1
+def devolverElDobleSiPar(x:int) -> int:
+    if x%2==0:
+        x=x*2
+    else:
+        x
+    return x
+
+print(devolverElDobleSiPar(2))
+print(devolverElDobleSiPar(3))
