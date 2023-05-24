@@ -79,15 +79,20 @@ print(esPalindroma("Aca"))
 
 #1.7
 def contraSegura(con: str) -> str:
-    if len(con)>8 and con != con.lower() and con != con.upper():
+    if len(con)>8 and con != con.lower() and con != con.upper() and hayNum(con):
         return "VERDE"
     elif len(con)>=5:
         return "AMARILLA"
     else:
         return "ROJA"
  
-#def hayNum ()
-print(contraSegura("cala"))
+def hayNum (con:str)->bool:
+    for i in range(0,len(con)-1,1):
+        if pertenece(con[i],"0123456789"):
+            return True
+    return False
+
+print(contraSegura("caLabaz1as"))
 
 #1.8
 def saldoActual (ls: list[tuple]) -> int:
