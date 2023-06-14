@@ -1,4 +1,8 @@
 from math import *
+import random
+import numpy as np
+
+#PRACTICA 8
 
 #Ejercicio 1
 
@@ -118,3 +122,138 @@ def hayVocales (p: str) -> bool:
     return False
 
 print(hayVocales("mama"))
+
+#Parte 2
+
+#Ejercicio 2
+
+#2.1
+def cambiarPoscPares(l: list[int])-> list[int]:
+    for i in  range(0,len(l),2):
+        l[i]=0
+    return l
+
+#2.2
+def darNuevaLista (l: list[int])->list[int]:
+    lista =[]
+    for i in range(0,len(l),1):
+        if i%2 == 0:
+            lista.append(0)
+        else:
+            lista.append(l[i])
+    return lista
+
+#2.3
+def sacarVocales (p: str)->str:
+    np = ""
+    for l in range(0,len(p),1):
+        if p[l] not in "aeiou":
+            np = np + p[l]
+    return np
+
+#2.4
+def reemplazaVocales (p: str)-> str:
+    res = ""
+    for l in range(0,len(p),1):
+        if pertenece(p[l],"aeiou"):
+            res += "_"
+        else:
+            res += p[l]
+    return res
+
+#2.5
+def daVueltaStr (p: str) ->str:
+    res = ""
+    for l in range(len(p)-1,-1,-1):
+        res += p[l]
+    return res
+
+#Ejercicio 3
+
+#3.1
+def listaAlumno()->list[str]:
+    lista = []
+    while True:
+        ing = input("Ingrese al alumnx: ")
+        if ing == "listo":
+            return lista
+        else:
+            lista.append(ing)
+
+#3.2
+def sube()->list[tuple]:
+    res = []
+    monto = 0
+
+    while True:
+        op = input("Indique operacion(C,D,X): ")
+        if op == "C":
+            montoIng = int(input("Indique el monto: "))
+            monto += montoIng
+            res.append((op,monto))
+        elif op == "D":
+            montoIng = int(input("Indique el monto: "))
+            monto -= montoIng
+            res.append((op,monto))
+        else:
+            return res
+
+def sieteYMedio ()->list[float]:
+    res = []
+    num = random.choice([1,2,3,4,5,6,7,10,11,12])
+    res.append(num)
+    while True:
+        turno = input("Otra carta o te plantas(C/P): ")
+        if turno == "P":
+            suma = 0.0
+            for n in range(0,len(res)):
+                if res[n]<10:
+                    suma += res[n]
+                elif res[n]>=10:
+                    suma += 0.5
+            if suma > 7.5:
+                return res, "Perdiste"
+            else : return res, "Ganaste"
+        elif turno == "C":
+            num = random.choice([1,2,3,4,5,6,7,10,11,12])
+            res.append(num)
+
+#Ejercicio 4
+
+#4.1
+def perteneceACadaUno (seq: list[list[int]], e: int)->list[bool]:
+    res=[]
+
+    for i in range(0,len(seq)):
+        if pertenece(e,seq[i]):
+            res.append(True)
+        else : res.append(False)
+    return res
+
+#4.2 
+def esMatriz (m: list[list[int]])->bool:
+    for i in range(0,len(m)):
+        if len(m)>0 and len(m[0])>0 and len(m[i])==len(m[0]):
+            return True
+        
+#4.3
+def filasOrdenadas (m: list[list[int]])->list[bool]:
+    res = []
+    if esMatriz(m):
+        for i in range(0,len(m)):
+            if ordenados(m[i]):
+                res.append(True)
+            else: res.append(False)
+    return res
+
+#4.4
+def matrizElevada (d: int, p: float)-> list[list[int]]:
+    m = np.random.randint((d,d))
+    mALaP = []
+    for i in range(0,len(m)):
+        for j in range(0,len(m)):
+            for n in range(0,d):
+                mALaP[i][j] += m[i][n]*m[n][j]
+    return mALaP
+
+
