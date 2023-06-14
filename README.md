@@ -7,7 +7,9 @@ Prácticas de la materia Introduccio a la Programacion del Departamento de Compu
 - Práctica 4 - Recursión sobre numeros enteros (Haskell)
 - Práctica 5 - Recursión sobre Listas (Haskell)
 - Práctica 6 - Testing de Caja Negra (Haskell)
-- Práctica 7 - Ejercicios con Imperativo (Python) 
+- Práctica 7 - Ejercicios con Imperativo (Python)
+- Práctica 8 - Ejercicios sobre listas (Python)
+- Práctica 10 - Archivos, colas, pilas y diccionarios (Python)
 
 Guia Práctica 7 de la materia Introducción a la Programación del Departamento de Computación de la FCEN.
 
