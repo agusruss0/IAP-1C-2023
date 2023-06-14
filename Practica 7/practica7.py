@@ -1,5 +1,5 @@
 from math import *
-#PRACTICA 6
+#PRACTICA 7
 
 #Ejercicio 1:
 
@@ -175,3 +175,46 @@ def devolverElDobleSiPar(x:int) -> int:
 
 print(devolverElDobleSiPar(2))
 print(devolverElDobleSiPar(3))
+
+#5.2
+def devolverSiParSinoNext (n: int) -> int:
+    if n%2==0:
+        return n
+    else: return n+1
+
+#5.3
+def devolverDobleSiMult3TripleSiMult9 (n: int)->int:
+    if n%9==0:
+        return n*3
+    elif n%3==0:
+        return n*2
+    else: return n
+
+#5.4
+def letras(nom: str)->str:
+    if len(nom)>=5:
+        return "Tu nombre tiene letras"
+    else: 
+        return "Tu nombre tiene menos de 5 caracteres"
+
+#5.5
+def vacasOLaburo (s: str, e: int)->str:
+    if (s=="F"and e>=60) or e<18 or (s=="M" and e>=65):
+        return "Tenes vacaciones"
+    else: return "Anda a laburar vago, te faltan aportes"
+
+#Ejercicio 6
+
+#6.1
+def unoADiez ()->int:
+    cuenta = 1
+    while cuenta<=10:
+        print(cuenta)
+        cuenta += 1
+
+#6.2
+def paresEntre10y40 ()->int:
+    cuenta = 10
+    while cuenta <= 40:
+        print(cuenta)
+        cuenta += 2
