@@ -218,3 +218,62 @@ def paresEntre10y40 ()->int:
     while cuenta <= 40:
         print(cuenta)
         cuenta += 2
+
+#6.3
+def eco()->str:
+    cuenta = 0
+    while cuenta < 10:
+        print("eco")
+        cuenta +=1
+
+#6.4
+def despegue (n: int)-> str:
+    while n >=1:
+        print(n)
+        n -=1
+    return 'Despegue'
+
+#6.5
+def viajeAlPasado (actual: int, dest: int)->str:
+    while actual > dest:
+        actual -= 1
+        print(f"Viajo un año al pasado,estamos en el año: {actual}")
+
+#6.6
+def maquinaDelTiempo (actual:int, destino:int)->str:
+    while actual>destino and (abs(actual-destino)>20):
+        actual -= 20
+        print(f"Viajo 20 años al pasado,estamos en el año: {actual}")
+
+#Ejercicio 7
+
+#7.1
+def hasta10 ()-> int:
+    for num in range(1,11,1):
+        print(num)
+
+#7.2
+def paresDe10a40 ()->int:
+    for num in range(10,41,2):
+        print(num)
+
+#7.3
+def eco10()->str:
+    for num in range(0,10,1):
+        print("eco")
+
+#7.4
+def desp (n:int)->str:
+    for num in range(n,0,-1):
+        print(num)
+    return "Despegue"
+
+#7.5
+def viaje(actual: int, destino: int)-> str:
+    for año in range(actual-1,destino,-1):
+        print(f"Viajo un año al pasado,estamos en el año: {año}")
+
+#7.6
+def aristoteles (actual: int)->str:
+    for año in range(actual-20,-384,-20):
+        print(f"Viajo 20 años al pasado,estamos en el año: {año}")
