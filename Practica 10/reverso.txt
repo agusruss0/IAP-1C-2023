@@ -1,2 +1,2 @@
-esta es la primera lineas.
+esta es la primera linea.
 y esta es la segunda.

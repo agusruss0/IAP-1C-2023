@@ -46,7 +46,7 @@ def clonar_sin_comentarios(texto: str)->str:
     archivo_nuevo.close()
     
 #Ejercicio 3
-def reverso (texto: str)-> str:
+def reverso (texto: str) -> str:
     archivo = open(texto, "r")
     archivo_nuevo = open("dadoVuelta.txt", "x")
     contenido = []
@@ -55,13 +55,18 @@ def reverso (texto: str)-> str:
         contenido.insert(0,l)
     
     archivo.close()
-    print(contenido)
     
     for linea in contenido:
         archivo_nuevo.write(linea)
+        archivo_nuevo.write("\n")
         
-    
     archivo_nuevo.close
+
+#Ejercicio 4
+def agregar_frase(archivo: str, frase: str) -> str:
+    archivo_inicial = open(archivo, "a")
+    archivo_inicial.write(frase)
+
 
 
     
