@@ -66,6 +66,35 @@ def reverso (texto: str) -> str:
 def agregar_frase(archivo: str, frase: str) -> str:
     archivo_inicial = open(archivo, "a")
     archivo_inicial.write(frase)
+    archivo_inicial.close()
+
+#Ejercicio 5
+def agregar_frase_inicio(archivo : str, frase: str) -> str:
+    archivo_inicial = open(archivo, "r")
+    leido = archivo_inicial.read()
+    f = frase+"\n"
+
+    archivo_inicial = open(archivo, "w")
+    archivo_inicial.write(f+leido)
+    
+    archivo_inicial.close()
+
+#Ejercicio 6
+def promedio_estudiante(in_lu: str)->float:
+    csv = open("notas.csv", "r")
+    suma = 0.0
+    materias = 0
+    for linea in csv:
+        lu , materia, fecha, nota = linea.strip().split(",") #separa primero los elmentos por comas, y luego quita el whitespace al principio y final de cada uno
+    
+        if lu == in_lu:
+            suma += float(nota)
+            materias += 1
+    promedio = suma /materias
+    return promedio
+
+    
+
 
 
 
