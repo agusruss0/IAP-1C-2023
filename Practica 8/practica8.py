@@ -248,14 +248,15 @@ def filasOrdenadas (m: list[list[int]])->list[bool]:
 
 #4.4
 def matrizElevada (d: int, p: float)-> list[list[int]]:
-    m = np.random.randint((d,d))
-    mALaP = [[],]
-    cuenta= 1
+    m = np.random.random((d, d))
+    matriz_elevada = m.copy()
+    cuenta = 0
     while cuenta<p:
         for i in range(0,len(m)):
-            for j in range(0,len(m)):
-                m[i][j] = m[i][j]*m[j][i]
+            for j in range(0,len(m[0])):
+                for k in range(0,len(m[0])):
+                    matriz_elevada[i][j] *= m[i][j]*m[j][i]
         cuenta +=1
-    return mALaP
+    return matriz_elevada
 
 
