@@ -1,4 +1,8 @@
+import random
+from queue import LifoQueue as Pila
 #PRACTICA 10
+
+#Archivos
 
 #Ejercicio 1
 
@@ -79,7 +83,9 @@ def agregar_frase_inicio(archivo : str, frase: str) -> str:
     
     archivo_inicial.close()
 
-#Ejercicio 6
+#Ejercicio 6 TO DO
+
+#Ejercicio 7
 def promedio_estudiante(in_lu: str)->float:
     csv = open("notas.csv", "r")
     suma = 0.0
@@ -91,14 +97,50 @@ def promedio_estudiante(in_lu: str)->float:
             suma += float(nota)
             materias += 1
     promedio = suma /materias
+    
+    csv.close()
+    
     return promedio
 
+#Pilas
+
+#Ejercicio 8
+def generar_nros_al_azar(in_n: int, in_desde: int,in_hasta: int) -> list[int]:
+    nros = random.sample(range(in_desde,in_hasta+1,1),k=in_n)
+
+    return nros
+
+#Ejercicio 9
+def armar_pila(n: int, d: int, h:int) -> Pila:
+    p = Pila()
+    for i in generar_nros_al_azar(n,d,h):
+        p.put(i)
+
+    return p
+
+#Ejercicio 10
+def cantidad_elementos(in_p: Pila) -> int:
+    cant = []
+
+    while not in_p.empty():
+        elemento = in_p.get()
+        cant.append(elemento)
     
+    return len(cant)
 
+pila = armar_pila(6,0,10)
+print(cantidad_elementos(pila))
 
+#Ejercicio 11
+def buscar_el_maximo(in_p: Pila) -> int:
+    max = 0
 
-
+    while not in_p.empty():
+        nro = in_p.get()
+        if nro >= max:
+            max = nro
     
+    return max
 
-
-
+pila = armar_pila(7,0,70)
+print(buscar_el_maximo(pila))
