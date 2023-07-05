@@ -1,5 +1,6 @@
 import random
 from queue import LifoQueue as Pila
+from queue import Queue as Cola
 #PRACTICA 10
 
 #Archivos
@@ -144,3 +145,89 @@ def buscar_el_maximo(in_p: Pila) -> int:
 
 pila = armar_pila(7,0,70)
 print(buscar_el_maximo(pila))
+
+#Ejercicio 12
+def estan_bien_balanceadas(in_s: str)->bool:
+    lista = in_s.split()
+    pila = Pila() 
+   
+    for i in lista:
+       pila.put(i)
+
+    while not pila.empty():
+        p = pila.get()
+        if p != "(" or p != ")":
+            continue
+        if p =="(":
+            p2 = pila.get()
+            if p2 == ")":
+                return False
+        if p == ")":
+            return False
+        
+    return True
+
+#Colas
+
+#Ejercicio 13
+def cola_de_numeros (n: int,d: int,h: int)-> Cola:
+    numeros_random = generar_nros_al_azar(n,d,h)
+    c = Cola()
+
+    for i in numeros_random:
+        c.put(i)
+
+    return c
+    
+#Ejercicio 14    
+def cantidad_elementos2(in_c: Cola)-> int:
+    cuenta = 0
+    while not  in_c.empty():
+        in_c.get()
+        cuenta +=1
+    
+    return cuenta
+
+print(cantidad_elementos2(cola_de_numeros(5,0,10)))  
+
+#EJercicio 15
+def buscar_maximo2 (in_c: Cola)->int:
+    maximo = 0
+    while not in_c.empty():
+        n = in_c.get()
+
+        if n>=maximo:
+            maximo = n
+        else : continue
+    
+    return maximo
+
+print(buscar_maximo2(cola_de_numeros(5,0,10)))
+
+#Ejercicio 16
+def armar_secuencia_de_bingo()-> Cola(int):
+    numeros = random.sample(range(100),k=99)
+    c= Cola()
+    for n in numeros:
+        c.put(n)
+    
+    return c
+
+def jugar_carton_de_bingo(in_carton: list[int], in_bolillero: Cola[int])-> int:
+    jugadas = 0
+    tachadas = []
+    while not in_bolillero.empty():
+        j = in_bolillero.get()
+        
+        for i in in_carton:
+            if j == i:
+                jugadas +=1
+                tachadas.append(i)
+        jugadas +=1        
+        
+        if len(tachadas)==12:
+            return jugadas
+
+print(jugar_carton_de_bingo([2,4,6,14,24,39,45,56,62,65,76,80],armar_secuencia_de_bingo()))
+    
+        
