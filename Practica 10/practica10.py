@@ -229,5 +229,8 @@ def jugar_carton_de_bingo(in_carton: list[int], in_bolillero: Cola[int])-> int:
             return jugadas
 
 print(jugar_carton_de_bingo([2,4,6,14,24,39,45,56,62,65,76,80],armar_secuencia_de_bingo()))
+
+#Ejercicio 17
+
     
         
