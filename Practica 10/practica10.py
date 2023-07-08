@@ -97,7 +97,7 @@ def promedio_estudiante(in_lu: str)->float:
         if lu == in_lu:
             suma += float(nota)
             materias += 1
-    promedio = suma /materias
+    promedio = suma /float(materias)
     
     csv.close()
     
@@ -231,6 +231,71 @@ def jugar_carton_de_bingo(in_carton: list[int], in_bolillero: Cola[int])-> int:
 print(jugar_carton_de_bingo([2,4,6,14,24,39,45,56,62,65,76,80],armar_secuencia_de_bingo()))
 
 #Ejercicio 17
+def n_pacientes_urgentes(in_c: Cola[(int, str, str)])->int:
+    pacientes_urgentes = 0
 
+    while not in_c.empty():
+        paciente = in_c.get()
+        if paciente[0] in [1,2,3]:
+            pacientes_urgentes +=1
     
+    return pacientes_urgentes
+
+lista= Cola()
+lista.put((1,"agus","cancer"))
+lista.put((2,"agus","cancer"))
+lista.put((3,"agus","cancer"))
+lista.put((4,"agus","cancer"))
+lista.put((5,"agus","cancer"))
+lista.put((6,"agus","cancer"))
+print(n_pacientes_urgentes(lista))
+
+#Diccionarios
+
+#Ejercicio 18
+def agrupar_longitud(in_texto: str)->dict:
+    archivo = open(in_texto, "r")
+    contenido = archivo.read()
+    palabras = contenido.split()
+    res= {}
+
+    for p in palabras:
+        if len(p) not in res:
+            res[len(p)] = 1
+        else:
+            res[len(p)] +=1
+    
+    archivo.close()
+    return res
         
+#Ejercicio 19
+def promedios(notas: str) -> dict:
+    archivo = open(notas, "r")
+    promedio = {}
+
+    for linea in archivo:
+        lu, _ = linea.strip().split(",", 1)
+        if lu not in promedio:
+            promedio[lu] = promedio_estudiante(lu)
+    
+    return promedio
+
+#Ejercicio 20
+def la_palabra_mas_frecuente(in_nombre_archivo: str)->str:
+    archivo = open(in_nombre_archivo, "r")
+    contenido = archivo.read()
+    palabras = contenido.split()
+    contadas = {}
+    mas_repetida = None
+    cant = 0
+
+    for palabra in palabras:
+        if palabra not in contadas:
+            contadas[palabra] = cantidad_de_apariciones(palabra,in_nombre_archivo)
+
+    for clave, valor in contadas.items():
+        if mas_repetida is None or valor>=cant:
+            mas_repetida = clave
+            cant = valor
+        
+    return mas_repetida    
